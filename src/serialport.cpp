@@ -6,10 +6,11 @@
 
 /******************************************************************************/
 
-VirtualPort::VirtualPort()
+VirtualPort::VirtualPort( QObject* _parent )
+    :   QObject{ _parent }
+    ,   m_hComPort { nullptr }
+    ,   m_pModifier { nullptr }
 {
-    m_hComPort = nullptr;
-    m_pModifier = nullptr;
 }
 
 /******************************************************************************/
@@ -21,7 +22,6 @@ VirtualPort::~VirtualPort()
 
     if( m_hComPort->isOpen() )
         m_hComPort->close();
-    delete m_hComPort;
 
     qDebug() << "-----------------------------------";
     qDebug() << "          COMPORT CLOSED           ";
@@ -44,7 +44,7 @@ VirtualPort::openComPort( QString _name, QString _speed )
     if( m_hComPort != nullptr )
         return;
 
-    m_hComPort = new QSerialPort();
+    m_hComPort = new QSerialPort{ this };
 
     connectReadEvent();
 

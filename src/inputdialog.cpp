@@ -28,11 +28,7 @@ InputDialog::InputDialog( QWidget* _pWidget )
 
 /******************************************************************************/
 
-InputDialog::~InputDialog()
-{
-    delete m_pTxtComPort;
-    delete m_pTxtBaudRate;
-}
+InputDialog::~InputDialog() = default;
 
 /******************************************************************************/
 
@@ -86,7 +82,7 @@ InputDialog::addElements() noexcept
     QPushButton* cmdOk = new QPushButton( "&Ok" );
     QPushButton* cmdCancel = new QPushButton( "&Cancel" );
 
-    QGridLayout* pTopLayout = new QGridLayout;
+    QGridLayout* pTopLayout = new QGridLayout( this );
     pTopLayout->addWidget( pLblComPort, 0, 0 );
     pTopLayout->addWidget( pLblBaudRate, 1, 0 );
     pTopLayout->addWidget( m_pTxtComPort, 0, 1 );

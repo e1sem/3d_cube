@@ -8,15 +8,13 @@
 ModelLoader::ModelLoader( QWidget* _parent )
     :    QWidget( _parent )
 {
-    m_keyCtlD = new QShortcut( this );
+    m_keyCtlD = new QShortcut ( this );
     m_keyCtlD->setKey( Qt::CTRL + Qt::Key_D );
 }
 
 /******************************************************************************/
 
-ModelLoader::~ModelLoader()
-{
-}
+ModelLoader::~ModelLoader() = default;
 
 /******************************************************************************/
 

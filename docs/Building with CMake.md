@@ -8,7 +8,7 @@
   - Configure project. Execute command for configure x64-debug version
 
 ```
-   cmake -G "Visual Studio 15 2017 Win64"  ../..
+   cmake -G "Visual Studio 15 2017 Win64"  ../.. -DCMAKE_PREFIX_PATH=PATH_TO_x64_COMPILER
 ``` 
 
 ## Configure x32 version
@@ -21,6 +21,12 @@ Where PATH_TO_COMPILER is full path to compiler's bin. For instance , command fo
     
 ```
 cmake -G "Visual Studio 15 2017" ../..-DCMAKE_PREFIX_PATH=C://Qt//5.11.0//msvc2015//
+```
+
+For x64 version, PATH_TO_x64_COMPILER may be:
+
+```
+cmake -G "Visual Studio 15 2017 Win64"  ../.. -DCMAKE_PREFIX_PATH=C://Qt//5.11.0//msvc2017_64//
 ```
 
 ## Build project

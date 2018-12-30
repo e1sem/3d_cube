@@ -33,7 +33,7 @@ public:
 
 /******************************************************************************/
 
-    explicit MainWindow(QWidget* _parent = nullptr);
+    explicit MainWindow( QWidget* _parent = nullptr );
 
     ~MainWindow();
 
@@ -67,11 +67,11 @@ private:
 
 /******************************************************************************/
 
-    QWidget* m_pWindowContainer;
-
     Qt3DCore::QEntity* m_pRootEntity;
 
     Qt3DExtras::Qt3DWindow* m_p3dView;
+
+    QWidget* m_pWindowContainer;
 
     Qt3DExtras::QFirstPersonCameraController* m_pCamController;
 

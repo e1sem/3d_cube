@@ -15,6 +15,7 @@ SceneModifier::SceneModifier(
          Qt3DCore::QEntity* rootEntity
     )
 {
+    this->setParent( rootEntity );
 
     // CuboidMesh Transform
     m_transformData = new Qt3DCore::QTransform();
@@ -38,6 +39,10 @@ SceneModifier::SceneModifier(
     m_modelEntity->addComponent( cuboid );
 
 }
+
+/******************************************************************************/
+
+SceneModifier::~SceneModifier() = default;
 
 /******************************************************************************/
 

@@ -31,7 +31,7 @@ public:
 
     explicit SceneModifier( Qt3DCore::QEntity* rootEntity );
 
-    ~SceneModifier() = default;
+    ~SceneModifier();
 
 /******************************************************************************/
 

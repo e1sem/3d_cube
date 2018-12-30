@@ -27,7 +27,7 @@ public:
 
 /******************************************************************************/
 
-    VirtualPort();
+    explicit VirtualPort( QObject* _parent );
 
     ~VirtualPort();
 

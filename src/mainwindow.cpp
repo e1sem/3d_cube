@@ -18,7 +18,7 @@
 /******************************************************************************/
 
 MainWindow::MainWindow( QWidget *parent )
-    : QWidget(parent)
+    : QWidget( parent )
 {
     initWidget();
     init3DView();
@@ -34,9 +34,8 @@ MainWindow::MainWindow( QWidget *parent )
 
 MainWindow::~MainWindow()
 {
-    delete m_pInputDialog;
-    delete m_pVirtualPort;
-    delete m_pWindowContainer;
+    delete m_pRootEntity;
+    delete m_p3dView;
 }
 
 /******************************************************************************/
@@ -47,7 +46,7 @@ MainWindow::initWidget()
     // Root entity
     m_pRootEntity = new Qt3DCore::QEntity();
 
-    setWindowTitle(ProjOpt::windowTitle);
+    setWindowTitle( ProjOpt::windowTitle );
     setFixedWidth( ProjOpt::windowWidth );
     setFixedHeight( ProjOpt::windowHeight );
 }
@@ -74,12 +73,14 @@ MainWindow::initWindowContainer()
 {
     m_pWindowContainer = QWidget::createWindowContainer( m_p3dView );
 
-    QHBoxLayout *hLayout = new QHBoxLayout( this );
-    QVBoxLayout *vLayout = new QVBoxLayout();
+    QHBoxLayout *hLayout = new QHBoxLayout( );
+    QVBoxLayout *vLayout = new QVBoxLayout( );
 
     vLayout->setAlignment( Qt::AlignTop );
     hLayout->addWidget( m_pWindowContainer, 1 );
     hLayout->addLayout( vLayout );
+
+    setLayout( hLayout );
 }
 
 /******************************************************************************/
@@ -145,7 +146,7 @@ MainWindow::initInputDialog()
 void
 MainWindow::initVirtualPort()
 {
-    m_pVirtualPort = new VirtualPort;
+    m_pVirtualPort = new VirtualPort( this );
 
     m_pVirtualPort->setModifier( m_pSceneModifier );
 }
@@ -156,6 +157,7 @@ void
 MainWindow::initModelLoader()
 {
     m_modelLoader = new ModelLoader( this );
+
     m_modelLoader->setSceneModifier( m_pSceneModifier );
     m_pSceneModifier->setModelLoader( m_modelLoader );
 }
