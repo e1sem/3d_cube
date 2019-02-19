@@ -15,7 +15,6 @@ SceneModifier::SceneModifier(
          Qt3DCore::QEntity* rootEntity
     )
 {
-
     // CuboidMesh Transform
     m_transformData = new Qt3DCore::QTransform();
 
@@ -36,7 +35,6 @@ SceneModifier::SceneModifier(
     Qt3DExtras::QCuboidMesh* cuboid = new Qt3DExtras::QCuboidMesh();
 
     m_modelEntity->addComponent( cuboid );
-
 }
 
 /******************************************************************************/
@@ -92,16 +90,14 @@ SceneModifier::getCuboidRotationY() noexcept
 void
 SceneModifier::onModelPathChanged()
 {
-
     m_objModel = new Qt3DRender::QMesh();
     m_objModel->setSource(
             QUrl::fromLocalFile(
                      m_pModelLoader->getPathToModel()
-                )
-        );
+            )
+    );
 
     m_modelEntity->addComponent( m_objModel );
-
 }
 
 /******************************************************************************/

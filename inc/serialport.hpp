@@ -1,5 +1,5 @@
-#ifndef __SERIAL_PORT_HPP__
-#define __SERIAL_PORT_HPP__
+#ifndef CUBE3D_VIRTUALPORT_HPP_
+#define CUBE3D_VIRTUALPORT_HPP_
 
 /******************************************************************************/
 
@@ -14,7 +14,7 @@ class SceneModifier;
 /******************************************************************************/
 
 class VirtualPort
-    : public QObject
+    :   public QObject
 {
 
 /******************************************************************************/
@@ -67,4 +67,4 @@ private:
 
 /******************************************************************************/
 
-#endif // __SERIAL_PORT_HPP__
+#endif // CUBE3D_VIRTUALPORT_HPP_

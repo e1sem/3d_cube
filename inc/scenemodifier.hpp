@@ -1,5 +1,5 @@
-#ifndef __SCENEMODIFIER_HPP__
-#define __SCENEMODIFIER_HPP__
+#ifndef CUBE3D_SCENEMODIFIER_HPP_
+#define CUBE3D_SCENEMODIFIER_HPP_
 
 /******************************************************************************/
 
@@ -77,4 +77,4 @@ private:
 
 /******************************************************************************/
 
-#endif // __SCENEMODIFIER_HPP__
+#endif // CUBE3D_SCENEMODIFIER_HPP_

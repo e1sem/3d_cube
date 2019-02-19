@@ -28,14 +28,6 @@ InputDialog::InputDialog( QWidget* _pWidget )
 
 /******************************************************************************/
 
-InputDialog::~InputDialog()
-{
-    delete m_pTxtComPort;
-    delete m_pTxtBaudRate;
-}
-
-/******************************************************************************/
-
 void
 InputDialog::setSerialPort( VirtualPort* _pComPort ) noexcept
 {
@@ -74,17 +66,17 @@ InputDialog::initializeWidget() noexcept
 void
 InputDialog::addElements() noexcept
 {
-    m_pTxtComPort = new QComboBox;
-    m_pTxtBaudRate  = new QComboBox;
+    m_pTxtComPort = new QComboBox( this );
+    m_pTxtBaudRate  = new QComboBox( this );
 
-    QLabel* pLblComPort = new QLabel( "&COM Port:" );
-    QLabel* pLblBaudRate = new QLabel( "&Baud rate:" );
+    QLabel* pLblComPort = new QLabel( "&COM Port:", this );
+    QLabel* pLblBaudRate = new QLabel( "&Baud rate:", this );
 
     pLblComPort->setBuddy( m_pTxtComPort );
     pLblBaudRate->setBuddy( m_pTxtBaudRate );
 
-    QPushButton* cmdOk = new QPushButton( "&Ok" );
-    QPushButton* cmdCancel = new QPushButton( "&Cancel" );
+    QPushButton* cmdOk = new QPushButton( "&Ok", this );
+    QPushButton* cmdCancel = new QPushButton( "&Cancel", this );
 
     QGridLayout* pTopLayout = new QGridLayout;
     pTopLayout->addWidget( pLblComPort, 0, 0 );
@@ -118,7 +110,7 @@ InputDialog::fillComboBoxes() noexcept
     // Avaliable COM Ports
     auto serialPorts = QSerialPortInfo::availablePorts();
 
-    for ( auto && port : serialPorts)
+    for( auto && port : serialPorts)
         m_pTxtComPort->addItem( port.portName() );
 
     // Standard baud rates

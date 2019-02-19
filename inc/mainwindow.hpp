@@ -1,5 +1,5 @@
-#ifndef __MAINWINDOW_HPP__
-#define __MAINWINDOW_HPP__
+#ifndef CUBE3D_MAINWINDOW_HPP_
+#define CUBE3D_MAINWINDOW_HPP_
 
 /******************************************************************************/
 
@@ -20,7 +20,7 @@ class ModelLoader;
 /******************************************************************************/
 
 class MainWindow
-    : public QWidget
+    :   public QWidget
 {
 
 /******************************************************************************/
@@ -33,7 +33,7 @@ public:
 
 /******************************************************************************/
 
-    explicit MainWindow(QWidget* _parent = nullptr);
+    explicit MainWindow( QWidget* _parent = nullptr );
 
     ~MainWindow();
 
@@ -91,4 +91,4 @@ private:
 
 /******************************************************************************/
 
-#endif // __MAINWINDOW_HPP__
+#endif // CUBE3D_MAINWINDOW_HPP_

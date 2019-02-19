@@ -17,8 +17,8 @@
 
 /******************************************************************************/
 
-MainWindow::MainWindow( QWidget *parent )
-    : QWidget(parent)
+MainWindow::MainWindow( QWidget* _parent )
+    :   QWidget( _parent )
 {
     initWidget();
     init3DView();
@@ -47,7 +47,7 @@ MainWindow::initWidget()
     // Root entity
     m_pRootEntity = new Qt3DCore::QEntity();
 
-    setWindowTitle(ProjOpt::windowTitle);
+    setWindowTitle( ProjOpt::windowTitle );
     setFixedWidth( ProjOpt::windowWidth );
     setFixedHeight( ProjOpt::windowHeight );
 }

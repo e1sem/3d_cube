@@ -9,13 +9,7 @@ ModelLoader::ModelLoader( QWidget* _parent )
     :    QWidget( _parent )
 {
     m_keyCtlD = new QShortcut( this );
-    m_keyCtlD->setKey( Qt::CTRL + Qt::Key_D );
-}
-
-/******************************************************************************/
-
-ModelLoader::~ModelLoader()
-{
+    m_keyCtlD->setKey( Qt::CTRL + Qt::Key_Q );
 }
 
 /******************************************************************************/
@@ -60,7 +54,7 @@ ModelLoader::setSceneModifier( SceneModifier* _sceneModifier )
 void
 ModelLoader::hotkeyClicked()
 {
-    QFileDialog filePicker {this};
+    QFileDialog filePicker;
     filePicker.setNameFilter( tr("3D models files( *.obj )") );
 
     m_pathToModel = filePicker.getOpenFileName();
@@ -69,6 +63,4 @@ ModelLoader::hotkeyClicked()
         emit modelPathChanged();
 }
 
-
 /******************************************************************************/
-

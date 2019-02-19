@@ -1,6 +1,5 @@
-#ifndef __MODELLOADER_HPP__
-#define __MODELLOADER_HPP__
-
+#ifndef CUBE3D_MODELLOADER_HPP_
+#define CUBE3D_MODELLOADER_HPP_
 
 /******************************************************************************/
 
@@ -30,7 +29,7 @@ public:
 
     explicit ModelLoader( QWidget* _parent = nullptr );
 
-    ~ModelLoader();
+    ~ModelLoader() = default;
 
 /******************************************************************************/
 
@@ -44,11 +43,15 @@ public:
 
 public slots:
 
+/******************************************************************************/
+
     void hotkeyClicked();
 
 /******************************************************************************/
 
 signals:
+
+/******************************************************************************/
 
     void modelPathChanged();
 
@@ -64,6 +67,8 @@ private:
 
     Q_DISABLE_COPY(ModelLoader)
 
+/******************************************************************************/
+
     QString m_pathToModel;
 
     QShortcut* m_keyCtlD;
@@ -76,4 +81,4 @@ private:
 
 /******************************************************************************/
 
-#endif // __MODELLOADER_HPP__
+#endif // CUBE3D_MODELLOADER_HPP_

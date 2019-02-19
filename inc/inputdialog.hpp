@@ -1,5 +1,5 @@
-#ifndef __INPUT_DIALOG_HPP__
-#define __INPUT_DIALOG_HPP__
+#ifndef CUBE3D_INPUTDIALOG_HPP_
+#define CUBE3D_INPUTDIALOG_HPP_
 
 /******************************************************************************/
 
@@ -14,7 +14,7 @@ class VirtualPort;
 /******************************************************************************/
 
 class InputDialog
-    : public QDialog
+    :   public QDialog
 {
 
 /******************************************************************************/
@@ -29,7 +29,7 @@ public:
 
     InputDialog( QWidget* _pWidget = nullptr );
 
-    ~InputDialog();
+    ~InputDialog() = default;
 
 /******************************************************************************/
 
@@ -77,4 +77,4 @@ private:
 
 /******************************************************************************/
 
-#endif // __INPUT_DIALOG_HPP__
+#endif // CUBE3D_INPUTDIALOG_HPP_

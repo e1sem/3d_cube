@@ -55,7 +55,7 @@ VirtualPort::openComPort( QString _name, QString _speed )
     m_hComPort->setStopBits( QSerialPort::OneStop );
     m_hComPort->setFlowControl( QSerialPort::NoFlowControl );
 
-    if ( m_hComPort->open( QIODevice::ReadOnly ) )
+    if( m_hComPort->open( QIODevice::ReadOnly ) )
     {
         qDebug() << "-----------------------------------";
         qDebug() << "          COMPORT OPENED           ";
@@ -85,8 +85,8 @@ VirtualPort::readData()
         return;
     }
 
-    int coordX = static_cast<int>( axisXY.data()[0] );
-    int coordY = static_cast<int>( axisXY.data()[1] );
+    int coordX = static_cast< int >( axisXY.data()[0] );
+    int coordY = static_cast< int >( axisXY.data()[1] );
 
     if( isUpdateNeeded( coordX, coordY ) )
     {
